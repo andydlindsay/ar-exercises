@@ -13,4 +13,8 @@ class Store < ActiveRecord::Base
         errors.add(:base, "store must carry gendered apparel") if (!self.mens_apparel && !self.womens_apparel)
     end
 
+    before_destroy do
+        false if self.employees.count > 0
+    end
+
 end
