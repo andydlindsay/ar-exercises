@@ -11,4 +11,8 @@ class Employee < ActiveRecord::Base
     }
     validates :store_id, presence: true
 
+    before_create do
+        self.password = (0...8).map { (65 + rand(26)).chr }.join
+    end
+
 end

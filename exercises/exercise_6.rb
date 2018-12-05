@@ -18,5 +18,5 @@ puts "----------"
 
 @employees = Employee.all
 @employees.each do |employee|
-    puts "Employee: #{employee.first_name} #{employee.last_name}"
+    puts "Employee: #{employee.first_name} #{employee.last_name} #{employee.password}"
 end
